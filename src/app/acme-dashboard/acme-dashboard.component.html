@@ -1,0 +1,48 @@
+<button (click)="start()" *ngIf="!data">Start Dashboard</button>
+
+<div class="wrapper" *ngIf="data">
+  <h1 class="acme-title">HAVE A QUESTION? WE CAN HELP</h1>
+  <form>
+    <mat-accordion class="mat-accordion">
+      <mat-expansion-panel
+        *ngFor="let row of data; index as i"
+        (opened)="onRowOpened(row)"
+        (closed)="onRowClosed(row)"
+        hideToggle
+      >
+        <mat-expansion-panel-header [ngClass]="row.open ? 'bgGrey' : ''">
+          <span>
+            <span class="questionNumber"> Q{{ i + 1 }}</span>
+            {{ row.question }}
+          </span>
+
+          <svg
+            *ngIf="!row.open"
+            class="svg-rotate__icon right"
+            width="25px"
+            height="25px"
+            viewBox="0 0 357 357"
+          >
+            <g id="add">
+              <path d="M357,204H204v153h-51V204H0v-51h153V0h51v153h153V204z" />
+            </g>
+          </svg>
+          <svg
+            *ngIf="row.open"
+            class="svg-rotate__icon right"
+            width="25px"
+            height="25px"
+            viewBox="0 0 357 357"
+            transform="rotate(45)"
+          >
+            <g id="add">
+              <path d="M357,204H204v153h-51V204H0v-51h153V0h51v153h153V204z" />
+            </g>
+          </svg>
+        </mat-expansion-panel-header>
+
+        <div>{{ row.answer }}</div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </form>
+</div>
