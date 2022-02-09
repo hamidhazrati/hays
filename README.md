@@ -3,7 +3,7 @@
 This implementation is WIP. 
 I spent 2 hours coding.
 
-An extra hour was wasted looking into MaterialDesign issues on my laptopm
+An extra hour was wasted looking into MaterialDesign issues on my laptop
 
 Was hoping to iplement using MatGridListModule and MatGridTile but to no avail.
 
@@ -11,7 +11,7 @@ Basic generated Unit Testing needs to be expanded.
 
 ## Running test
 ng serve -o
-Then click <button>
+Then click BUTTON
 
 ## Known Issues
  - SVG transform used - which also transforms gold square into Diamond
